@@ -44,121 +44,134 @@ public class MainActivity extends AppCompatActivity {
         btnBagi = findViewById(R.id.btnBagi);
         btnSamaDengan = findViewById(R.id.btnSamaDengan);
 
+        double number1 = 0;
+        double number2 = 0;
+        String operator = "";
+
         String input="";
         btnSatu.setOnClickListener(new View.OnClickListener(){
             @Override
-                    public void onClick(View v){
-                input.concat("1");
+            public void onClick(View v){
+                input += "1";
+                txtInputText.setText(input);
             }
         }
 
         btnDua.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("2");
+                input += "2";
+                txtInputText.setText(input);
             }
         }
 
         btnTiga.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("3");
+                input += "3";
+                txtInputText.setText(input);
             }
         }
 
         btnEmpat.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("4");
+                input += "4";
+                txtInputText.setText(input);
             }
         }
 
         btnLima.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("5");
+                input += "5";
+                txtInputText.setText(input);
             }
         }
 
         btnEnam.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("6");
+                input += "6";
+                txtInputText.setText(input);
             }
         }
 
         btnTujuh.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("7");
+                input += "7";
+                txtInputText.setText(input);
             }
         }
 
         btnDelapan.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("8");
+                input += "8";
+                txtInputText.setText(input);
             }
         }
 
         btnSembilan.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("9");
+                input += "9";
+                txtInputText.setText(input);
             }
         }
 
         btnNol.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("0");
+                input += "0";
+                txtInputText.setText(input);
             }
         }
 
         btnPlus.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("+");
+                number1 = Double.parseDouble(input);
+                operator = "+";
+                input = "";
+                txtInputText.setText("");
             }
         }
 
         btnMines.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("-");
+                number1 = Double.parseDouble(input);
+                operator = "-";
+                input = "";
+                txtInputText.setText("");
             }
         }
 
         btnKali.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("*");
+                number1 = Double.parseDouble(input);
+                operator = "*";
+                input = "";
+                txtInputText.setText("");
             }
         }
 
         btnBagi.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                input.concat("/");
-            }
-        }
-
-        private void appendInput(String value) {
-            input += value;
-            txtInputText.setText(input);
-        }
-
-        private void setOperator(String operator) {
-            if (!input.isEmpty()) {
                 number1 = Double.parseDouble(input);
-                this.operator = operator;
+                operator = "/";
                 input = "";
+                txtInputText.setText("");
             }
         }
 
         btnSamaDengan.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 if (!input.isEmpty()) {
                     number2 = Double.parseDouble(input);
 
@@ -187,7 +200,6 @@ public class MainActivity extends AppCompatActivity {
                     txtInputText.setText(String.valueOf(result));
                     input = "";
                     operator = "";
-                }
             }
         }
     }
